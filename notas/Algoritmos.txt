@@ -1,0 +1,15 @@
+Encontrados los siguientes algoritmos para ordenar pilas
+
+https://www.geeksforgeeks.org/sort-stack-using-temporary-stack/
+
+https://www.enjoyalgorithms.com/blog/sort-stack-using-temporary-stack
+
+https://en.wikipedia.org/wiki/Stack-sortable_permutation
+
+https://medium.com/@msouiyeh/not-your-typical-42network-push-swap-cc583f863a90
+
+https://github.com/abeph00/Push_Swap
+
+https://medium.com/@oduwoledare/42-push-swap-explained-psuedocodes-ba8108339556
+
+https://github.com/gjmacias/push_swap
