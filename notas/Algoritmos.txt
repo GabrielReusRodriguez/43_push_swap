@@ -13,3 +13,15 @@ https://github.com/abeph00/Push_Swap
 https://medium.com/@oduwoledare/42-push-swap-explained-psuedocodes-ba8108339556
 
 https://github.com/gjmacias/push_swap
+
+
+0 5 1 => sa 5 0 1 => ra 0 1 5
+
+0 5 1 => sa 5 0 1 => ra 0 1 5 
+
+0 5 1 => ra => 1 0 5 => ra => 5 1 0 
+
+0 5 1 => pa 5 0 1 => 
+
+
+1 5 0 => ra =>  5 0 1 => sa  0 5 1 => ra.  

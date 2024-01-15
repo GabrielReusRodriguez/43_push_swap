@@ -14,6 +14,7 @@ SRC_FILES=	${SRC_DIR}/ft_stack.c			\
 			${SRC_DIR}/ft_primitives_px.c	\
 			${SRC_DIR}/ft_primitives_rx.c	\
 			${SRC_DIR}/ft_primitives_rrx.c	\
+			${SRC_DIR}/ft_sort.c			\
 			${SRC_DIR}/ft_push_swap.c		
 
 OBJ_FILES=$(SRC_FILES:${SRC_DIR}/%.c=${BIN_DIR}/%.o)

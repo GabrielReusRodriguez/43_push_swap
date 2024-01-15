@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 22:39:53 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/16 00:51:26 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,15 +35,12 @@ void	ft_stack_debug(const t_stack *stack)
 {
 	t_stack		*node;
 
+	printf("STACK\n");
 	if (stack == NULL)
-	{
-		printf("STACK\n");
 		printf("empty...\n");
-	}
 	else
 	{
 		node = (t_stack *)stack;
-		printf("STACK\n");
 		while (node != NULL)
 		{
 			printf("%d\n",*((int *)node->content));
@@ -77,3 +74,10 @@ int	*ft_stack_to_array(t_stack **stack)
 		return (contents);	
 }
 
+int		ft_stack_content(const t_stack *node)
+{
+	int	content;
+
+	content = *((int *)node->content);
+	return (content);
+}

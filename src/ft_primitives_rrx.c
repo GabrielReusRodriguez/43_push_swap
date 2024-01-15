@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:50:23 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 22:57:09 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/16 00:28:50 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,6 +27,24 @@ void	ft_primitives_rrx(t_stack **stack)
 		contents = ft_stack_to_array(stack);
 		if (contents == NULL)
 			return ;
+
+		i = 0;
+		node = *stack;
+		*((int *)node->content) = contents[stack_size -1];
+		node = node->next;
+		while (node != NULL)
+		{
+			*((int *)node->content) = contents[i];
+			i++;
+			node = node->next;
+		}
+		free (contents);
+
+		/*
+		stack_size = ft_stack_size(*stack);
+		contents = ft_stack_to_array(stack);
+		if (contents == NULL)
+			return ;
 		i = stack_size - 1;
 		node = *stack;
 		while (i > 0)
@@ -37,6 +55,7 @@ void	ft_primitives_rrx(t_stack **stack)
 		}
 		*((int *)node->content) = contents[stack_size - 1];
 		free (contents);
+		*/
 	}
 
 }

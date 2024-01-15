@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:28:20 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 22:56:29 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/16 00:32:12 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,6 +17,7 @@
 #include "ft_stack.h"
 #include "ft_validations.h"
 #include "ft_primitives.h"
+#include "ft_sort.h"
 
 
 void	*push_new_content(const char *str_number, t_stack **stack)
@@ -80,12 +81,13 @@ int	main(int argc, char **argv)
 		return (1);
 	}
 	ft_stack_debug(stack_a);
-	ft_stack_debug(stack_b);
+//	ft_stack_debug(stack_b);
 
-	ft_primitives_rx(&stack_a);
+	ft_sort(&stack_a);
+/*t_primitives_rrx(&stack_a);
 	ft_stack_debug(stack_a);
-
-	ft_primitives_rrx(&stack_a);
+	ft_primitives_rx(&stack_a);
+	*/
 	ft_stack_debug(stack_a);
 
 	ft_stack_clear(&stack_a, free);

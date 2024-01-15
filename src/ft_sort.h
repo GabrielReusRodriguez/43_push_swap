@@ -1,24 +1,20 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack_utils.h                                   :+:      :+:    :+:   */
+/*   ft_sort.h                                          :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 18:47:50 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/16 00:50:36 by greus-ro         ###   ########.fr       */
+/*   Created: 2024/01/15 23:02:13 by greus-ro          #+#    #+#             */
+/*   Updated: 2024/01/16 00:53:25 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STACK_UTILS_H
-# define FT_STACK_UTILS_H
+#ifndef FT_SORT_H
+# define FT_SORT_H
 
-# include "ft_stack.h"
+#include "ft_stack.h"
 
-void	ft_stack_debug(const t_stack *stack);
-int		*ft_stack_to_array(t_stack **stack);
-int		ft_stack_issorted(const t_stack *stack);
-int		ft_stack_content(const t_stack *node);
-
+void	ft_sort(t_stack **stack);
 
 #endif

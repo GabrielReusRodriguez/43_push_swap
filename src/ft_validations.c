@@ -6,12 +6,13 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:34:58 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 20:32:24 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/16 00:40:54 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include "ft_validations.h"
+#include "ft_stack_utils.h"
 #include "../libft/libft.h"
 
 int	ft_isvalid_arg(const char *str)
@@ -51,6 +52,26 @@ int	ft_isvalid_stack(t_stack **stack)
 			node_aux = node_aux->next;
 		}
 		node_review = node_review->next;
+	}
+	return (1);
+}
+
+int	ft_stack_issorted(const t_stack *stack)
+{
+	t_stack	*node;
+	int		content;
+	int		content_next;
+
+	if (stack == NULL)
+		return (1);
+	node = (t_stack *)stack;
+	while (node->next != NULL)
+	{
+		content = *((int *)node->content);
+		content_next = *((int *)node->next->content);
+		if (content > content_next)
+			return (0);
+		node = node->next;
 	}
 	return (1);
 }
