@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:43:37 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 20:49:44 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/15 21:06:43 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -27,16 +27,12 @@
 
 #include "ft_stack.h"
 
-void	ft_primitives_sa(t_stack **stack);
-void	ft_primitives_sb(t_stack **stack);
-void	ft_primitives_ss(t_stack **stack);
-void	ft_primitives_pa(t_stack **stack);
-void	ft_primitives_pb(t_stack **stack);
-void	ft_primitives_ra(t_stack **stack);
-void	ft_primitives_rb(t_stack **stack);
-void	ft_primitives_rr(t_stack **stack);
-void	ft_primitives_rra(t_stack **stack);
-void	ft_primitives_rrb(t_stack **stack);
-void	ft_primitives_rrr(t_stack **stack);
+void	ft_primitives_sx(t_stack **stack);
+void	ft_primitives_ss(t_stack **stack_a, t_stack **stack_b);
+void	ft_primitives_px(t_stack **src,t_stack **dest);
+void	ft_primitives_rx(t_stack **stack);
+void	ft_primitives_rr(t_stack **stack_a, t_stack **stack_b);
+void	ft_primitives_rrx(t_stack **stack);
+void	ft_primitives_rrr(t_stack **stack, t_stack **stack_b);
 
 #endif

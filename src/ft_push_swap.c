@@ -6,16 +6,18 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:28:20 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 20:42:01 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/15 22:56:29 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stddef.h>
 #include <stdio.h>
 #include <stdlib.h>
+#include "../libft/libft.h"
 #include "ft_stack.h"
 #include "ft_validations.h"
-#include "../libft/libft.h"
+#include "ft_primitives.h"
+
 
 void	*push_new_content(const char *str_number, t_stack **stack)
 {
@@ -79,6 +81,13 @@ int	main(int argc, char **argv)
 	}
 	ft_stack_debug(stack_a);
 	ft_stack_debug(stack_b);
+
+	ft_primitives_rx(&stack_a);
+	ft_stack_debug(stack_a);
+
+	ft_primitives_rrx(&stack_a);
+	ft_stack_debug(stack_a);
+
 	ft_stack_clear(&stack_a, free);
 	ft_stack_clear(&stack_b, free);
 	return (0);

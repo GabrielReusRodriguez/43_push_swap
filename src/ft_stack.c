@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 20:29:34 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/15 21:08:33 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -35,12 +35,15 @@ int	ft_stack_isempty(t_stack **stack)
 
 void	ft_stack_push(t_stack **stack, t_stack *node)
 {
-	if (ft_stack_isempty(stack) == 1)
-		*stack = node;
-	else
+	if(node != NULL)
 	{
-		node->next = *stack;
-		*stack = node;
+		if (ft_stack_isempty(stack) == 1)
+			*stack = node;
+		else
+		{
+			node->next = *stack;
+			*stack = node;
+		}
 	}
 }
 
