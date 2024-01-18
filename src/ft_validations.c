@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:34:58 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/16 00:40:54 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/17 23:43:33 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,6 +14,7 @@
 #include "ft_validations.h"
 #include "ft_stack_utils.h"
 #include "../libft/libft.h"
+#include "ft_sort.h"
 
 int	ft_isvalid_arg(const char *str)
 {
@@ -45,7 +46,7 @@ int	ft_isvalid_stack(t_stack **stack)
 		node_aux = *stack;
 		while (node_aux != NULL)
 		{
-			if (*((int *)node_aux->content) == *((int *)node_review->content))
+			if (ft_stack_content(node_aux) == ft_stack_content(node_review))
 				num_occurs++;
 			if (num_occurs > 1)
 				return (0);
@@ -56,7 +57,7 @@ int	ft_isvalid_stack(t_stack **stack)
 	return (1);
 }
 
-int	ft_stack_issorted(const t_stack *stack)
+int	ft_stack_issorted(const t_stack *stack, int order)
 {
 	t_stack	*node;
 	int		content;
@@ -67,11 +68,36 @@ int	ft_stack_issorted(const t_stack *stack)
 	node = (t_stack *)stack;
 	while (node->next != NULL)
 	{
-		content = *((int *)node->content);
-		content_next = *((int *)node->next->content);
-		if (content > content_next)
+		content = ft_stack_content(node);
+		content_next = ft_stack_content(node->next);
+		//if (content > content_next)
+		if(ft_are_sorted_values(content, content_next, order) == 0)
 			return (0);
 		node = node->next;
+	}
+	return (1);
+}
+
+int	ft_stack_isnsorted(const t_stack *stack, size_t n, int order)
+{
+	t_stack	*node;
+	int		content;
+	int		content_next;
+	size_t	i;
+
+	if (stack == NULL)
+		return (1);
+	i = 0;
+	node = (t_stack *)stack;
+	while (node->next != NULL && i < n)
+	{
+		content = ft_stack_content(node);
+		content_next = ft_stack_content(node->next);
+		//if (content > content_next)
+		if (ft_are_sorted_values(content, content_next, order) == 0)
+			return (0);
+		node = node->next;
+		i++;
 	}
 	return (1);
 }

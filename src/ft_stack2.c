@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/16 00:51:26 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/18 01:04:08 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -19,7 +19,7 @@ void	ft_stack_clear(t_stack **stack, void (*fr) (void *) )
 {
 	t_stack		*node;
 	t_stack		*aux;
-
+	
 	node = *stack;
 	while (node != NULL)
 	{
@@ -43,7 +43,7 @@ void	ft_stack_debug(const t_stack *stack)
 		node = (t_stack *)stack;
 		while (node != NULL)
 		{
-			printf("%d\n",*((int *)node->content));
+			printf("%d\n",ft_stack_content(node));
 			node = node->next;
 		}
 	}
@@ -57,6 +57,8 @@ int	*ft_stack_to_array(t_stack **stack)
 		t_stack	*node;
 		size_t	i;
 
+		if(stack == NULL || *stack == NULL)
+			return (NULL);
 		stack_size = ft_stack_size(*stack);
 		if (stack_size == 0)
 			return (NULL);
@@ -67,7 +69,7 @@ int	*ft_stack_to_array(t_stack **stack)
 		node = *stack;
 		while (node != NULL)
 		{
-			contents[i] = *((int *)node->content);
+			contents[i] = ft_stack_content(node);
 			node = node->next;
 			i++;
 		}

@@ -15,6 +15,10 @@ https://medium.com/@oduwoledare/42-push-swap-explained-psuedocodes-ba8108339556
 https://github.com/gjmacias/push_swap
 
 
+https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
+
+https://medium.com/@ayogun/push-swap-c1f5d2d41e97
+
 0 5 1 => sa 5 0 1 => ra 0 1 5
 
 0 5 1 => sa 5 0 1 => ra 0 1 5 
@@ -23,5 +27,20 @@ https://github.com/gjmacias/push_swap
 
 0 5 1 => pa 5 0 1 => 
 
+0 5 1 => rla 5 1 0 => 1 5 0 => 5 0 1
 
-1 5 0 => ra =>  5 0 1 => sa  0 5 1 => ra.  
+1 5 0 => rla =>  5 0 1 => sa  0 5 1 => rla 5 1 0.  
+
+*****
+
+0 5 1  => rda  105 => sa 015
+
+1 5 0 => rda  0 1 5
+
+****
+
+2 1 5 =>  sa 1 2 5
+
+5 2 1 => Si a > b sa 2 5 1 => Si a < b rda  1 2 5
+
+./push_swap 6 96 53 14 5

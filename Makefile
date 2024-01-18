@@ -14,6 +14,7 @@ SRC_FILES=	${SRC_DIR}/ft_stack.c			\
 			${SRC_DIR}/ft_primitives_px.c	\
 			${SRC_DIR}/ft_primitives_rx.c	\
 			${SRC_DIR}/ft_primitives_rrx.c	\
+			${SRC_DIR}/ft_actions.c			\
 			${SRC_DIR}/ft_sort.c			\
 			${SRC_DIR}/ft_push_swap.c		
 
@@ -22,7 +23,7 @@ DEP_FILES=$(SRC_FILES:${SRC_DIR}/%.c=${BIN_DIR}/%.d)
 
 all: ${NAME}
 
-${NAME}: ${BIN_DIR} ${LIBFT} ${OBJ_FILES} Makefile
+${NAME}: ${BIN_DIR} ${LIBFT} ${OBJ_FILES} 
 	${CC} ${CFLAGS} -o $@  ${OBJ_FILES} ${LIBFT}
 
 ${BIN_DIR}:
@@ -31,9 +32,8 @@ ${BIN_DIR}:
 ${LIBFT}: 
 	make -C ${LIBFT_DIR} all
 
-${BIN_DIR}/%.o: ${SRC_DIR}/%.c
+${BIN_DIR}/%.o: ${SRC_DIR}/%.c Makefile
 	${CC} ${CFLAGS} -o $@ -c $<
-
 
 clean:
 	rm -f ${BIN_DIR}/*.o
