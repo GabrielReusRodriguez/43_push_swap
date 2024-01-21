@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 23:03:24 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/18 01:24:11 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/21 02:57:03 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -125,6 +125,27 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 		{
 			ft_execute_action(stack_a,stack_b, PRIMITIVE_PB);
 			ft_execute_action(stack_a,stack_b, PRIMITIVE_PB);
+			/*
+			Para oredenar la pila b, puedo hcaer un truco.
+			Revisar si está desordenada y si lo está... hacemos en reverse cuando lo tenga que hacer la pila a con 3. 
+			Si la pila A NO lo ha ehcho, entonces al salir lo hago pero en el peor de los casos tenemos 2 movimientos en vez de 3
+
+			*/
+			while(ft_stack_isnsorted(*stack_a, 3, ORDER_ASC) == 0)
+			{
+				stacka_action = ft_sort3_next_mov(stack_a, ORDER_ASC);
+				stackb_action= PRIMITIVE_NO;
+				if( ft_stack_issorted(*stack_b, ORDER_ASC) == 0 && stacka_action == PRIMITIVE_RRA)
+					stackb_action = PRIMITIVE_RRB;
+				//stackb_action = ft_sort3_next_mov(stack_b, ORDER_ASC);
+				//if (stackb_action != PRIMITIVE_NO)
+				//stackb_action = stackb_action + 1;
+				ft_execute_step(stacka_action, stackb_action, stack_a, stack_b);
+			}
+			if( ft_stack_issorted(*stack_b, ORDER_ASC) == 0)
+				ft_execute_step(PRIMITIVE_NO, PRIMITIVE_RB, stack_a, stack_b);
+
+		/*
 			while(ft_stack_isnsorted(*stack_a, 3, ORDER_ASC) == 0 || ft_stack_isnsorted(*stack_b, 2, ORDER_ASC) == 0)
 			{
 				stacka_action = ft_sort3_next_mov(stack_a, ORDER_ASC);
@@ -133,27 +154,74 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 					stackb_action = stackb_action + 1;
 				ft_execute_step(stacka_action, stackb_action, stack_a, stack_b);
 			}
+		*/	
+	/*
 			printf("PILAS ORDENADAS\n");
 			ft_stack_debug(*stack_a);
 			ft_stack_debug(*stack_b);
+	*/		
 			//Falta el caso que el stack b sea mayor que todo el stack a
 			i = 0;
 			while(ft_stack_isempty(stack_b) == 0)
 			{
 				if (ft_are_sorted_values(ft_stack_content(*stack_a), ft_stack_content(*stack_b), ORDER_ASC) == 1)
 				{
-					ft_execute_action(stack_a,stack_b, PRIMITIVE_RA);
+					if(i == 3 - 1)
+						ft_execute_action(stack_a,stack_b, PRIMITIVE_RR);
+					else
+					{
+						ft_execute_action(stack_a,stack_b, PRIMITIVE_RA);
+					}
 					i++;
 				}
 				else
 				{
 					ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
+					i--;
 				}
-				//ft_stack_debug(*stack_a);
+				/*
+				printf("PRE-i %lu\n",i);
+				ft_stack_debug(*stack_a);
+				ft_stack_debug(*stack_b);
+				*/
+				if( i == 3 )
+				{
+					
+					if (ft_are_sorted_values(ft_stack_content(*stack_a), ft_stack_content(*stack_b),ORDER_ASC) == 0)
+					{
+						ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
+					}
+					else
+					{
+						//ft_execute_action(stack_a,stack_b, PRIMITIVE_SB);
+						while (ft_stack_isempty(stack_b) == 0)
+							ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
+					}
+					/*
+					if (ft_are_sorted_values(ft_stack_content(*stack_a), ft_stack_content(*stack_b),ORDER_ASC) == 1)
+					{
+						ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
+						ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
+						ft_execute_action(stack_a,stack_b, PRIMITIVE_SA);
+					
+					}
+					
+					while(ft_stack_isempty(stack_b) == 0)
+					{
+						ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
+					}
+					*/
+				}
+
 			}
+			/*
+			printf("RE-orden\n");
+			ft_stack_debug(*stack_a);
+			*/
 			while(ft_stack_issorted(*stack_a,ORDER_ASC) == 0)
 			{	
 				ft_execute_action(stack_a,stack_b, PRIMITIVE_RA);
+				//ft_stack_debug(*stack_a);
 			}
 		}
 	}
