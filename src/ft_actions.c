@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:00:57 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/21 02:47:31 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/21 03:54:41 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,27 +16,27 @@
 static void	ft_print_action(int action)
 {
 	if (action == PRIMITIVE_PA)
-		printf("\tpa\n");
+		printf("pa\n");
 	if (action == PRIMITIVE_PB)
-		printf("\tpb\n");
+		printf("pb\n");
 	if (action == PRIMITIVE_RA)
-		printf("\tra\n");
+		printf("ra\n");
 	if (action == PRIMITIVE_RB)
-		printf("\trb\n");
+		printf("rb\n");
 	if (action == PRIMITIVE_RR)
-		printf("\trr\n");
+		printf("rr\n");
 	if (action == PRIMITIVE_RRA)
-		printf("\trra\n");
+		printf("rra\n");
 	if (action == PRIMITIVE_RRB)
-		printf("\trrb\n");
+		printf("rrb\n");
 	if (action == PRIMITIVE_RRR)
-		printf("\trrr\n");
+		printf("rrr\n");
 	if (action == PRIMITIVE_SA)
-		printf("\tsa\n");
+		printf("sa\n");
 	if (action == PRIMITIVE_SB)
-		printf("\tsb\n");
+		printf("sb\n");
 	if (action == PRIMITIVE_SS)
-		printf("\tss\n");
+		printf("ss\n");
 }
 
 void	ft_execute_action(t_stack **stack_a, t_stack **stack_b, int action)

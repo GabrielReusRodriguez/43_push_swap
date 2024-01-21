@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:28:20 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/19 00:45:40 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/01/21 04:04:57 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -47,6 +47,20 @@ t_stack	*fill_stack(int argc, char **argv)
 	int			i;
 	t_stack		*stack;
 	
+	//El checker los pilla al reves, normalmente el primer argumento, le haces push esto va al reves
+	i = argc - 1;
+	while (i >= 1)
+	{
+		if (ft_isvalid_arg(argv[i]) == 0)
+		{
+			printf("Hay un arg con formato invalido: _%s_\n", argv[i]);
+			return (NULL);
+		}
+		if (push_new_content(argv[i], &stack) == NULL)
+			return (NULL);
+		i--;
+	}
+	/*
 	i = 1;
 	while (i < argc)
 	{
@@ -59,6 +73,7 @@ t_stack	*fill_stack(int argc, char **argv)
 			return (NULL);
 		i++;
 	}
+	*/
 	return (stack);
 }
 
@@ -88,9 +103,10 @@ int	main(int argc, char **argv)
 
 	ft_sort(&stack_a, &stack_b);
 	//printf("FINAL ******************************************\n");
-	//ft_stack_debug(stack_a);
-	//ft_stack_debug(stack_b);
-
+	/*
+	ft_stack_debug(stack_a);
+	ft_stack_debug(stack_b);
+*/
 	ft_stack_clear(&stack_a, free);
 	ft_stack_clear(&stack_b, free);
 	return (0);
