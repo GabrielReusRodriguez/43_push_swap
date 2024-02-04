@@ -1,0 +1,10 @@
+Posibles algoritmos
+
+https://medium.com/@jamierobertdawson/push-swap-the-least-amount-of-moves-with-two-stacks-d1e76a71789a
+
+https://www.geeksforgeeks.org/sort-stack-using-temporary-stack/
+
+https://www.geeksforgeeks.org/bubble-sort-using-two-stacks/
+
+Visualizer
+https://github.com/o-reo/push_swap_visualizer.git
