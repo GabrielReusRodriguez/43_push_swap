@@ -6,13 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/05 22:27:41 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/05 23:02:13 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:42:57 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_index.h"
 #include "libft.h"
-#include <stdio.h>
 
 static void	ft_bubble_sort(int	*values, size_t size)
 {

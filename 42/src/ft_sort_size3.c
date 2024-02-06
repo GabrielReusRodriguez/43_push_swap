@@ -6,14 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:50:29 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/05 23:14:33 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:42:18 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stack.h"
 #include "ft_primitives.h"
 #include "ft_sort.h"
-#include <stdio.h>
 
 int	ft_sort3_next_mov(t_stack **stack)
 {

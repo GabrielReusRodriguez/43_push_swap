@@ -6,12 +6,11 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/05 23:05:13 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:39:43 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
-#include <stdio.h>
 #include "ft_stack.h"
 
 t_stack	*ft_stack_newnode(int content)

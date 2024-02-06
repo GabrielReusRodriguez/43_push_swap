@@ -6,16 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:49:50 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 10:52:30 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:42:11 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include "ft_stack.h"
 #include "ft_primitives.h"
 #include "ft_sort.h"
-
-#include <stdio.h>
-
 
 static void ft_push_less_values_to_b(t_stack **stack_a, t_stack **stack_b)
 {

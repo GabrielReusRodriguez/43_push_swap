@@ -6,7 +6,7 @@
 #    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 18:11:33 by greus-ro          #+#    #+#              #
-#    Updated: 2024/02/05 22:54:37 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/02/06 14:40:31 by greus-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -42,6 +42,7 @@ SRC_FILES =	ft_actions.c \
 			ft_primitives_rx.c \
 			ft_primitives_sx.c \
 			ft_push_swap.c \
+			ft_radixsort.c \
 			ft_sort.c \
 			ft_sort_size3.c \
 			ft_sort_size5.c	\
