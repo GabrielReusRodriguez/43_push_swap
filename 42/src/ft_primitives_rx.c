@@ -6,13 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:50:23 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/15 22:58:14 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/05 23:13:24 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdlib.h>
 #include "ft_stack.h"
-#include "ft_stack_utils.h"
 
 void	ft_primitives_rx(t_stack **stack)
 {
@@ -31,11 +30,11 @@ void	ft_primitives_rx(t_stack **stack)
 		node = *stack;
 		while (i < stack_size - 1)
 		{
-			*((int *)node->content) = contents[i + 1];
+			node->content = contents[i + 1];
 			i++;
 			node = node->next;
 		}
-		*((int *)node->content) = contents[0];
+		node->content = contents[0];
 		free (contents);
 	}
 }

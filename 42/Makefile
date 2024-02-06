@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+         #
+#    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 18:11:33 by greus-ro          #+#    #+#              #
-#    Updated: 2024/02/04 17:13:13 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/02/05 22:54:37 by greus-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -14,7 +14,7 @@
 
 NAME=push_swap
 
-CFLAGS=-Wall -Wextra -Werror -MMD -MP
+CFLAGS=-Wall -Wextra -Werror -MMD -MP -g
 #CFLAGS+= -g
 
 LIBFT_DIR=./libft
@@ -25,7 +25,18 @@ SRC_DIR=./src
 BIN_DIR=./bin
 OBJ_DIR=./obj
 
+#SRC_FILES =	ft_actions.c \
+			ft_primitives_px.c \
+			ft_primitives_rrx.c \
+			ft_primitives_rx.c \
+			ft_primitives_sx.c \
+			ft_push_swap.c \
+			ft_stack.c \
+			ft_stack2.c \
+			ft_validations.c 
+
 SRC_FILES =	ft_actions.c \
+			ft_index.c	\
 			ft_primitives_px.c \
 			ft_primitives_rrx.c \
 			ft_primitives_rx.c \
@@ -34,9 +45,11 @@ SRC_FILES =	ft_actions.c \
 			ft_sort.c \
 			ft_sort_size3.c \
 			ft_sort_size5.c	\
+			ft_sort_big_size.c	\
 			ft_stack.c \
 			ft_stack2.c \
 			ft_validations.c 
+
 
 OBJ_FILES = $(SRC_FILES:%.c=${OBJ_DIR}/%.o)
 

@@ -6,25 +6,23 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/18 01:04:08 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/05 23:28:02 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <stdio.h>
 #include <stdlib.h>
 #include "ft_stack.h"
-#include "ft_stack_utils.h"
 
-void	ft_stack_clear(t_stack **stack, void (*fr) (void *) )
+void	ft_stack_clear(t_stack **stack)
 {
 	t_stack		*node;
 	t_stack		*aux;
-	
+
 	node = *stack;
 	while (node != NULL)
 	{
 		aux = node->next;
-		(*fr)(node->content);
 		free(node);
 		node = aux;
 	}
@@ -43,7 +41,7 @@ void	ft_stack_debug(const t_stack *stack)
 		node = (t_stack *)stack;
 		while (node != NULL)
 		{
-			printf("%d\n",ft_stack_content(node));
+			printf("%d\n", node->content);
 			node = node->next;
 		}
 	}
@@ -52,34 +50,47 @@ void	ft_stack_debug(const t_stack *stack)
 
 int	*ft_stack_to_array(t_stack **stack)
 {
-		int		*contents;
-		int		stack_size;
-		t_stack	*node;
-		size_t	i;
+	int		*contents;
+	int		stack_size;
+	t_stack	*node;
+	size_t	i;
 
-		if(stack == NULL || *stack == NULL)
-			return (NULL);
-		stack_size = ft_stack_size(*stack);
-		if (stack_size == 0)
-			return (NULL);
-		contents = (int *)malloc(sizeof(int));
-		if (contents == NULL)
-			return NULL;
-		i = 0;
-		node = *stack;
-		while (node != NULL)
-		{
-			contents[i] = ft_stack_content(node);
-			node = node->next;
-			i++;
-		}
-		return (contents);	
+	if (stack == NULL || *stack == NULL)
+		return (NULL);
+	stack_size = ft_stack_size(*stack);
+	if (stack_size == 0)
+		return (NULL);
+	contents = (int *)malloc(stack_size * sizeof(int));
+	if (contents == NULL)
+		return (NULL);
+	i = 0;
+	node = *stack;
+	while (node != NULL)
+	{
+		contents[i] = node->content;
+		node = node->next;
+		i++;
+	}
+	return (contents);
 }
 
-int		ft_stack_content(const t_stack *node)
+t_stack		*ft_stack_get_node(t_stack *stack, size_t n)
 {
-	int	content;
+	t_stack	*node;
+	size_t	size;
+	size_t	i;
 
-	content = *((int *)node->content);
-	return (content);
+	size = ft_stack_size(stack);
+	if (n == 0)
+		return (stack);
+	i = 0;
+	node = stack;
+	while (i < size)
+	{
+		if (i == n)
+			return (node);
+		i++;
+		node = node->next;
+	}
+	return (NULL);
 }

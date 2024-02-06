@@ -1,5 +1,5 @@
 NAME=push_swap
-CFLAGS=-Wall -Wextra -Werror -MMD -MP
+CFLAGS=-Wall -Wextra -Werror -MMD -MP -g
 CC= cc
 LIBFT_DIR= ./libft
 LIBFT=${LIBFT_DIR}/libft.a

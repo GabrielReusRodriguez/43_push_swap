@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/01/16 12:00:33 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/05 23:05:13 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,7 @@
 #include <stdio.h>
 #include "ft_stack.h"
 
-t_stack	*ft_stack_newnode(void *content)
+t_stack	*ft_stack_newnode(int content)
 {
 	t_stack	*node;
 
@@ -26,19 +26,19 @@ t_stack	*ft_stack_newnode(void *content)
 	return (node);
 }
 
-int	ft_stack_isempty(t_stack **stack)
+t_bool	ft_stack_isempty(t_stack **stack)
 {
 	if (*stack == NULL)
-		return (1);
+		return (TRUE);
 	else
-		return (0);
+		return (FALSE);
 }
 
 void	ft_stack_push(t_stack **stack, t_stack *node)
 {
-	if(node != NULL)
+	if (node != NULL)
 	{
-		if (ft_stack_isempty(stack) == 1)
+		if (ft_stack_isempty(stack) == TRUE)
 		{
 			node->next = NULL;
 			*stack = node;
@@ -55,7 +55,7 @@ t_stack	*ft_stack_pop(t_stack **stack)
 {
 	t_stack	*node;
 
-	if (ft_stack_isempty(stack) == 1)
+	if (ft_stack_isempty(stack) == TRUE)
 		return (NULL);
 	else
 	{

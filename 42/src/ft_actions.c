@@ -3,40 +3,40 @@
 /*                                                        :::      ::::::::   */
 /*   ft_actions.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:00:57 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/04 17:12:20 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:26:21 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_primitives.h"
-#include <stdio.h>
+#include "libft.h"
 
 static void	ft_print_action(int action)
 {
 	if (action == PRIMITIVE_PA)
-		printf("pa\n");
+		ft_putendl_fd("pa", 1);
 	if (action == PRIMITIVE_PB)
-		printf("pb\n");
+		ft_putendl_fd("pb", 1);
 	if (action == PRIMITIVE_RA)
-		printf("ra\n");
+		ft_putendl_fd("ra", 1);
 	if (action == PRIMITIVE_RB)
-		printf("rb\n");
+		ft_putendl_fd("rb", 1);
 	if (action == PRIMITIVE_RR)
-		printf("rr\n");
+		ft_putendl_fd("rr" ,1);
 	if (action == PRIMITIVE_RRA)
-		printf("rra\n");
+		ft_putendl_fd("rra", 1);
 	if (action == PRIMITIVE_RRB)
-		printf("rrb\n");
+		ft_putendl_fd("rrb", 1);
 	if (action == PRIMITIVE_RRR)
-		printf("rrr\n");
+		ft_putendl_fd("rrr", 1);
 	if (action == PRIMITIVE_SA)
-		printf("sa\n");
+		ft_putendl_fd("sa", 1);
 	if (action == PRIMITIVE_SB)
-		printf("sb\n");
+		ft_putendl_fd("sb", 1);
 	if (action == PRIMITIVE_SS)
-		printf("ss\n");
+		ft_putendl_fd("ss", 1);
 }
 
 void	ft_execute_action(t_stack **stack_a, t_stack **stack_b, int action)
@@ -68,7 +68,8 @@ void	ft_execute_action(t_stack **stack_a, t_stack **stack_b, int action)
 	ft_print_action(action);
 }
 
-void	ft_execute_step(int stacka_action, int stackb_action, t_stack **stack_a, t_stack **stack_b)
+void	ft_execute_step(int stacka_action, int stackb_action, \
+			t_stack **stack_a, t_stack **stack_b)
 {
 	if (stacka_action == PRIMITIVE_RA && stackb_action == PRIMITIVE_RB)
 	{
@@ -87,5 +88,4 @@ void	ft_execute_step(int stacka_action, int stackb_action, t_stack **stack_a, t_
 	}
 	ft_execute_action(stack_a, NULL, stacka_action);
 	ft_execute_action(NULL, stack_b, stackb_action);
-
 }

@@ -3,143 +3,102 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_size5.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:49:50 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/04 21:27:39 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 10:52:30 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_stack.h"
-#include "ft_stack_utils.h"
 #include "ft_primitives.h"
 #include "ft_sort.h"
 
 #include <stdio.h>
 
-/*
-void    ft_sort_size5(t_stack **stack_a, t_stack **stack_b, int order)
+
+static void ft_push_less_values_to_b(t_stack **stack_a, t_stack **stack_b)
 {
-	int     stacka_action;
-	int     stackb_action;
-	size_t  i;
-
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PB);
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PB);
-	while(ft_stack_isnsorted(*stack_a, 3, order) == 0)
+	while (ft_stack_size(*stack_b) < 2)
 	{
-		stacka_action = ft_sort3_next_mov(stack_a, order);
-		stackb_action= PRIMITIVE_NO;
-		if (ft_stack_issorted(*stack_b, ft_get_inverse_order(order)) == 0 &&\
-				stacka_action == PRIMITIVE_RRA)
-			stackb_action = PRIMITIVE_RRB;
-		ft_execute_step(stacka_action, stackb_action, stack_a, stack_b);
-	}
-	if (ft_stack_issorted(*stack_b, ft_get_inverse_order(order)) == 0)
-		ft_execute_step(PRIMITIVE_NO, PRIMITIVE_RB, stack_a, stack_b);
-	//Sorted stack a and stack b
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
-	i = 0;
-	while(ft_stack_issorted(*stack_a, order) == 0)
-	{
-		if (ft_stack_isnsorted(*stack_a, 2, order) == 0 && i < 5  - 1)
-			ft_execute_action(stack_a,NULL, PRIMITIVE_SA);
-		ft_execute_action(stack_a,NULL, PRIMITIVE_RA);
-		ft_stack_debug(*stack_a);
-		i++;
-	}
-}
-*/
-
-static void	ft_sort5_transfer_all(t_stack **stack_a, t_stack **stack_b, int order)
-{
-	int 	content_a;
-	int		content_b;
-	size_t	i;
-
-	i = 0;
-	printf("\tStack 1a\n");
-	ft_stack_debug(*stack_a);
-	printf("\tStack 1b\n");
-	ft_stack_debug(*stack_b);
-	//Mientras b no este vacio y no hayamos recorrido los 3 valores de stack a...
-	while (ft_stack_isempty(stack_b) == 0 && i < 4)
-	{
-		content_a = ft_stack_content(*stack_a);
-		content_b = ft_stack_content(*stack_b);
-		//Comprobamos si el top de stack a y stack b estan ordenados, en caso que NO , 
-		//movemos el top de ba al stack_a. 9es decir, si top b tiene que estar antes que top de stack b
-		//Ademas hago rotacion para comprobar con el siuiente de stak b
-		//En otras palabras, chequeamos si el valor de b iria debajo del top de a.
-		//En caso que NO fuese debajo, lo colocamos encima.
-		if (ft_are_sorted_values(content_a, content_b, order) == 0)
-			ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
+		if ((*stack_a)->content == 0 || (*stack_a)->content == 1)
+			ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
 		else
-			i++;
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_RA);
-		i++;
-		/*
-			printf("\tStack a\n");
-			ft_stack_debug(*stack_a);
-			printf("\tStack b\n");
-			ft_stack_debug(*stack_b);
-		*/
-	}
-	printf("\tStack a\n");
-	ft_stack_debug(*stack_a);
-	printf("\tStack b\n");
-	ft_stack_debug(*stack_b);
-
-	//Si queda algo en b, hacemos un push a a
-	if (i == 3)
-	{
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
-	}
-	//Rotamos la  pila a hasta que este ordenada.
-	while (ft_stack_issorted(*stack_a, order) == 0)
-		ft_execute_action(stack_a,stack_b, PRIMITIVE_RA);
+			ft_execute_action(stack_a, NULL, PRIMITIVE_RRA);
+	}	
 }
 
-void    ft_sort_size5(t_stack **stack_a, t_stack **stack_b, int order)
+/*
+* Primero busco los dos indices 0 y 1 ( los valores mas pequeños ) y los 
+coloco al final de la pila b . Me aseguro que sea el 1 el top para que
+al volver con push queden ordenados
+
+* Luego me encargo del ultimo. Si el Ultimo de lo que me qued aen la pila A
+	es el último paso al siguiente paso si no...-.
+	En caso que el primero sea el ultimo indice , lo traslado hacia arriba para
+	que quede el ultimo
+	En caso que no , solo nos queda que sea el sgeundo por lo que lo muevo 
+	hacia abajo.
+
+* Ya solo nos quedan ordenar los 2 valores intermedios de A ( que NO son el
+ultimo xq ya lo hemos colocado antes...)
+
+* Por ultimo hacemos los opush de b-> a
+*/
+void	ft_sort_size5(t_stack **stack_a, t_stack **stack_b)
 {
-	int     stacka_action;
-	int     stackb_action;
-
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PB);
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PB);
-	while (ft_stack_issorted(*stack_a, order) == 0)
+	t_stack	*last_node_a;
+	int		last_index;
+	int		last_position;
+	
+	last_index = ft_stack_size(*stack_a) - 1;
+	ft_push_less_values_to_b(stack_a, stack_b);
+	if ((*stack_b)->content == 0)
+		ft_execute_action(NULL, stack_b, PRIMITIVE_SB);
+	//node = ft_stack_get_node(*stack_a, 2);
+	last_position = ft_stack_size(*stack_a) - 1;
+	last_node_a = ft_stack_get_node(*stack_a, last_position);
+	if (last_node_a == NULL)
+		return ;
+	//if (node->content != 4)
+	if (last_node_a->content != last_index)
 	{
-		stacka_action = ft_sort3_next_mov(stack_a, order);
-		stackb_action= PRIMITIVE_NO;
-		if (ft_stack_issorted(*stack_b, order) == 0 &&\
-				stacka_action == PRIMITIVE_RRA)
-			stackb_action = PRIMITIVE_RRB;
-		ft_execute_step(stacka_action, stackb_action, stack_a, stack_b);
+		//if ((*stack_a)->content == 4)
+		if ((*stack_a)->content == last_index)
+			ft_execute_action(stack_a, NULL, PRIMITIVE_RA);
+		else
+			ft_execute_action(stack_a, NULL, PRIMITIVE_RRA);
 	}
-	//if (ft_stack_issorted(*stack_b, ft_get_inverse_order(order)) == 0)
-	if (ft_stack_issorted(*stack_b, order) == 0)
-		ft_execute_step(PRIMITIVE_NO, PRIMITIVE_RRB, stack_a, stack_b);
-	/*
-	printf("stack a\n");
-	ft_stack_debug(*stack_a);
-	printf("stack b\n");
-	ft_stack_debug(*stack_b);
-	*/
-	//Sorted stack a and stack b
-	ft_sort5_transfer_all(stack_a, stack_b, order);
-	//ft_stack_debug(*stack_a);
-	/*
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
-	ft_execute_action(stack_a,stack_b, PRIMITIVE_PA);
-	i = 0;
-	while(ft_stack_issorted(*stack_a, order) == 0)
-	{
-		if (ft_stack_isnsorted(*stack_a, 2, order) == 0 && i < 5  - 1)
-			ft_execute_action(stack_a,NULL, PRIMITIVE_SA);
-		ft_execute_action(stack_a,NULL, PRIMITIVE_RA);
-		ft_stack_debug(*stack_a);
-		i++;
-	}
-	*/
+	if ( (*stack_a)->content  > (*stack_a)->next->content )
+		ft_execute_action(stack_a, NULL, PRIMITIVE_SA);
+	ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
+	ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
 }
+
+/*
+
+void	sort_four_to_five_elements(t_stacks *s)
+{
+	while (s->b_size <= 1)
+	{
+		if (s->a[0] == 0 || s->a[0] == 1)
+			push("pb", s);
+		else
+			rotate(s->a, s->a_size, "up", "a");
+	}
+	if (s->b[0] == 0)
+		swap("sb", s->b, s->b_size);
+	if (s->a[2] != 4)
+	{
+		if (s->a[0] == 4)
+			rotate(s->a, s->a_size, "up", "a");
+		else
+			rotate(s->a, s->a_size, "down", "a");
+	}
+	if (s->a[0] > s->a[1])
+		swap("sa", s->a, s->a_size);
+	push("pa", s);
+	push("pa", s);
+}
+
+*/

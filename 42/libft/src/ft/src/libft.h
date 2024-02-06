@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/02 20:37:22 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/02 01:09:08 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 13:13:54 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,6 +30,7 @@ int		ft_isprint(int c);
 int		ft_isupper(int c);
 
 int		ft_atoi(const char *nbr);
+long	ft_atol(const char *nbr);
 char	*ft_itoa(int n);
 char	*ft_utoa(unsigned int n);
 char	*ft_dtoh(unsigned long u_number, unsigned int up_case);
