@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:50:29 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 14:42:18 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/06 14:51:36 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -20,13 +20,10 @@ int	ft_sort3_next_mov(t_stack **stack)
 
 	content = (*stack)->content;
 	content_next = (*stack)->next->content;
-	if (ft_stack_issorted(*stack) == FALSE)
-	{
-		if (content > content_next)
-			return (PRIMITIVE_SA);
-		else
-			return (PRIMITIVE_RRA);
-	}
+	if (content > content_next)
+		return (PRIMITIVE_SA);
+	else
+		return (PRIMITIVE_RRA);
 	return (PRIMITIVE_NO);
 }
 
