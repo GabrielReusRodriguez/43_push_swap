@@ -1,25 +1,25 @@
-[1    /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+[1    /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[2    /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[2    /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
 [3    /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[4    /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+[4    /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
+[5    /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
+[6    /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[5    /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+[7    /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[6    /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+[8    /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[7    /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+[9    /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[8    /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+[10   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[9    /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+[11   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[10   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
-[11   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
 [12   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
 [13   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
@@ -28,56 +28,56 @@
 1 0 2
 [15   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[16   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
-[17   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+[16   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[18   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+[17   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[19   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
-[20   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+[18   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[19   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[21   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[20   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[21   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [22   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
 [23   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[24   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
-[25   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+[24   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[26   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
-[27   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[25   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
+[26   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
+[27   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [28   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[29   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
-[30   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[29   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[30   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [31   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
 [32   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[33   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[33   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [34   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
 [35   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[36   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[36   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [37   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[38   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[39   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
-[40   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+[38   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
+[39   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
+[40   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [41   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
 [42   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
@@ -86,123 +86,123 @@
 2 0 1
 [44   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[45   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
+[45   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [46   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[47   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[47   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [48   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[49   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[49   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [50   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[51   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[52   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[53   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+[51   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[52   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[54   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
+[53   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
+[54   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [55   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[56   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
+[56   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
 [57   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[58   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
-[59   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
-[60   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
+[58   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
+[59   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
+[60   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [61   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
 [62   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[63   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
+[63   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
 [64   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[65   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+[65   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
+[66   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[66   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[67   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
+[67   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [68   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[69   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
+[69   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [70   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[71   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
-[72   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
+[71   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
+[72   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [73   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[74   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
+[74   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [75   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
 [76   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
 [77   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[78   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
-[79   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+[78   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[80   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
+[79   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[80   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 [81   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
 [82   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[83   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[84   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+[83   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
+[84   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
+[85   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[85   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[86   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
+[86   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
 [87   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
 [88   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
 2 0 1
-[89   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
+[89   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+2 1 0
 [90   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
 [91   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[92   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
-2 0 1
+[92   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
 [93   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
 1 0 2
-[94   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
+[94   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
+1 0 2
+[95   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
 2 1 0
-[95   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[96   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[97   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[98   /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
-[99   /  100] InputSize    3 InstrCount      2 Pass or Fail ? PASS
-2 1 0
-[100  /  100] InputSize    3 InstrCount      1 Pass or Fail ? PASS
-1 0 2
+[96   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[97   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[98   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[99   /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
+[100  /  100] InputSize    3 InstrCount      3 Pass or Fail ? PASS
+2 0 1
 
 Input Size : 3
-Min 1
-Max 3
-Average : 1.89
+Min        1
+Max        3
+Average : 2.01
 
 Pass or Fail ?
 Max : PASS
