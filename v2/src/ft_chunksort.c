@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:03:08 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/08 13:44:38 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/08 21:35:01 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,8 +24,7 @@ static size_t ft_chunk_get_size(const t_stack *stack_a)
 
     stack_size = ft_stack_size(stack_a);
     if (stack_size <=  100)
-        return (10);
-        //return (20);
+        return (20);
     if (stack_size  >= 500)
         return (50);
     return (30);

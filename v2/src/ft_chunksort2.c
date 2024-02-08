@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:03:08 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/08 15:01:16 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/08 21:30:46 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -60,12 +60,15 @@ static void	ft_best_hold_2_top(t_stack **stack_a, size_t size_a, int hold_1, \
 {
 	int num_steps_hold_2;
 
-	//num_steps_hold_2 = size_a - hold_2 + 1;
 	num_steps_hold_2 = size_a - hold_2;
-	if (num_steps_hold_2 <= hold_1)
+	if (num_steps_hold_2 < hold_1)
+	{
 		ft_stacka_node_to_top(stack_a, hold_2);
+	}
 	else
+	{
 		ft_stacka_node_to_top(stack_a, hold_1);
+	}
 }
 
 /*
@@ -101,86 +104,75 @@ void	ft_chunk_iteration(t_stack **stack_a, t_stack **stack_b, \
 }
 */
 
-static void ft_busca_punto_push(t_stack **stack_a, t_stack **stack_b)
+static void ft_busca_punto_push(t_stack **stack_a, t_stack **stack_b, t_chunk chunk)
 {
+
+	
 	stack_a = stack_a;
 	stack_b = stack_b;
-	/*
-	if (ft_stack_isempty(stack_b) == TRUE)
-	{
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
-		return;
-	}
-	
-	if ((*stack_a)->content > (*stack_b)->content)
-	{
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
-		return;
-	}
-	else
+	chunk = chunk;
+
+/*
+	size_t	chunk_size;
+	int		value;
+
+	chunk_size = chunk.max - chunk.min;
+	value = (*stack_a)->content;
+	if ((size_t)value < chunk.min + chunk_size / 2 )
 	{
 		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
 		ft_execute_action(stack_a, stack_b, PRIMITIVE_RB);
 	}
-	*/
-	/*
-	int value;
-	size_t num_rbs;
-	size_t size;
+	else
+	{
+		if((*stack_b) != NULL && value < (*stack_b)->content)
+		{
+			ft_execute_action(stack_a, stack_b, PRIMITIVE_RB);	
+			ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
+			ft_execute_action(stack_a, stack_b, PRIMITIVE_RRB);	
+		}
+		else
+		{
+			ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
+		}
 
-	if (ft_stack_isempty(stack_b) == TRUE)
-	{
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
-		return;
+		//ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
 	}
-	size = ft_stack_size(stack_b);
-	value = (*stack_a)->content;
-	num_rbs = 0;
-	while (num_rbs < size && value <= (*stack_b)->content)
-	{
-		printf("\t\tValue: %d analizado : %d\n", value,(*stack_b)->content );
-		num_rbs++;
-		ft_execute_action(NULL, stack_b, PRIMITIVE_RB);
-	}
-	ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
-	while (num_rbs != 0)
-	{
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_RRB);
-		num_rbs--;
-	}
-	*/
-	/*
-	ft_stackb_max_to_top(stack_b);
-	ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
 	*/
 /*
-	ft_stackb_max_to_top(stack_b);
-	if (ft_stack_isempty(stack_b) == TRUE)
+	size_t	chunk_size;
+	int		value;
+
+	chunk_size = chunk.max - chunk.min;
+	value = (*stack_a)->content;
+	if ((size_t)value < chunk.min + chunk_size / 2 )
 	{
 		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
-		return ;
-	}
-	if ((*stack_a)->content > (*stack_b)->content)
-	{
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);	
+		ft_execute_action(stack_a, stack_b, PRIMITIVE_RB);
 	}
 	else
 	{
-			ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
-			ft_execute_action(stack_a, stack_b, PRIMITIVE_RB);
+		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
 	}
-*/
-	//ft_stackb_max_to_top(stack_b);
-	//ft_stackb_min_to_top(stack_b);
+*/	
 
-	if(ft_stack_isempty(stack_b) == TRUE)
-		return;
-	while(ft_stack_issorted(*stack_b) == FALSE)
+	size_t	chunk_size;
+	int		value;
+
+	chunk_size = chunk.max - chunk.min;
+	value = (*stack_a)->content;
+	ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
+	if ((size_t)value < chunk.min + chunk_size / 2 )
 	{
-		ft_stack_debug(*stack_b);
 		ft_execute_action(stack_a, stack_b, PRIMITIVE_RB);
+		return;
 	}
-
+	if ((*stack_b)->next != NULL && (*stack_b)->content < (*stack_b)->next->content)
+	{
+		ft_execute_action(stack_a, stack_b, PRIMITIVE_SB);
+		return;
+	}
+//	ft_stackb_max_to_top(stack_b);
 }
 
 void	ft_chunk_iteration(t_stack **stack_a, t_stack **stack_b, \
@@ -208,8 +200,8 @@ void	ft_chunk_iteration(t_stack **stack_a, t_stack **stack_b, \
 		//ft_stackb_min_to_top(stack_a);
 		//ft_stackb_max_to_top(stack_b);
 		//printf("\t\tPUSH\n");
-		ft_busca_punto_push(stack_a, stack_b);
-		ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
+		ft_busca_punto_push(stack_a, stack_b, chunk);
+		//ft_execute_action(stack_a, stack_b, PRIMITIVE_PB);
 		/*
 		if((*stack_b)!= NULL && (*stack_b)->next != NULL && (*stack_b)->content < (*stack_b)->next->content)
 			ft_execute_action(stack_a, stack_b, PRIMITIVE_SB);

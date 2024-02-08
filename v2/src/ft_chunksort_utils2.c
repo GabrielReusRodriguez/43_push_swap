@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 20:19:59 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/08 10:49:27 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/08 20:54:09 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -45,7 +45,6 @@ void	ft_stacka_node_to_top(t_stack **stack_a, int node_position)
     }
 	else
 	{
-		//num_steps = size - node_position + 1;
 		num_steps = size - node_position;
 		action = PRIMITIVE_RRA;
 	}
