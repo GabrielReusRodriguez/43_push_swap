@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+         #
+#    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 01:34:53 by greus-ro          #+#    #+#              #
-#    Updated: 2024/02/07 18:45:08 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/02/07 23:03:30 by greus-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -16,6 +16,7 @@ CFLAGS=-Wall -Wextra -Werror -MMD -MP
 BIN_DIR=./bin
 SRC_DIR=./src
 INC_DIR=./inc
+
 FT_BIN_DIR=./bin/ft
 GET_NEXT_BIN_DIR=./bin/ft_get_next_line
 PRINTF_BIN_DIR=./bin/ft_printf
@@ -33,8 +34,8 @@ all:${NAME}
 ${NAME}: ${BIN_DIR} ${FT_BIN_DIR} ${GET_NEXT_BIN_DIR} ${PRINTF_BIN_DIR} ${BIN_DIR}/ft/ft_utils.a ${BIN_DIR}/ft_get_next_line/ft_get_next_line.a ${BIN_DIR}/ft_printf/ft_printf.a  Makefile	
 #ar -rcsT ${NAME} ${BIN_DIR}/ft/ft_utils.a  ${BIN_DIR}/ft_get_next_line/ft_get_next_line.a ${BIN_DIR}/ft_printf/ft_printf.a	
 #	ar -rcs ${NAME} ${BIN_DIR}/ft/ft_utils.a  ${BIN_DIR}/ft_get_next_line/ft_get_next_line.a ${BIN_DIR}/ft_printf/ft_printf.a	
-	ar -rcs ${NAME} ${BIN_DIR}/ft/*.o  ${BIN_DIR}/ft_get_next_line/*.o ${BIN_DIR}/ft_printf/*.o	
-	cp ${NAME} ${BIN_DIR}/libft.a
+	ar -rcs ${NAME} ${BIN_DIR}/ft/*.o  ${BIN_DIR}/ft_get_next_line/*.o ${BIN_DIR}/ft_printf/*.o		
+#	cp ${NAME} ${BIN_DIR}/libft.a
 	
 ${BIN_DIR}/ft/ft_utils.a:
 	make all -C ${FT_DIR}
@@ -56,6 +57,7 @@ ${GET_NEXT_BIN_DIR}:
 
 ${PRINTF_BIN_DIR}:
 	mkdir -p ${PRINTF_BIN_DIR}
+
 #clean:
 #	make clean -C  ${FT_DIR}
 #	make clean -C  ${GET_NEXT_DIR}
@@ -73,8 +75,5 @@ re: fclean all
 #bonus:${BONUS_OBJ_FILES} ${LIBFT_OBJ_FILES}
 #	ar -rcs ${NAME} ${LIBFT_OBJ_FILES} ${BONUS_OBJ_FILES}
 #	@touch bonus
-
--include ${LIBFT_DEP_FILES}
--include ${BONUS_DEP_FILES}
 
 .PHONY= all clean fclean re

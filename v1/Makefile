@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+         #
+#    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 18:11:33 by greus-ro          #+#    #+#              #
-#    Updated: 2024/02/07 18:43:32 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/02/07 23:25:18 by greus-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -51,8 +51,10 @@ all: ${NAME}
 ${OBJ_DIR}:
 	mkdir -p ${OBJ_DIR}
 
-${NAME} : ${LIBFT_LIB} ${OBJ_FILES}
-	cc ${CFLAGS} -o $@ ${LIBFT_LIB} ${OBJ_FILES} 
+${NAME} : ${OBJ_DIR} ${LIBFT_LIB} ${OBJ_FILES} 
+#	cc ${CFLAGS} -o $@  ${OBJ_FILES}  ${LIBFT_LIB}
+	cc ${CFLAGS} -o $@  ${LIBFT_LIB} ${OBJ_FILES}
+
 
 ${OBJ_DIR}/%.o : ${SRC_DIR}/%.c Makefile
 	cc ${CFLAGS} -I ${LIBFT_INC_DIR} -o $@ -c $<  

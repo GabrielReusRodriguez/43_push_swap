@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_stack2.c                                        :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 19:50:31 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/07 23:43:54 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,13 @@ void	ft_stack_clear(t_stack **stack)
 	stack = NULL;
 }
 
-/*
+
 void	ft_stack_debug(const t_stack *stack)
 {
 	t_stack		*node;
 
-	ft_putendl("STACK\n");
+	//ft_putendl_fd("STACK\n", 1);
+	printf("STACK\n");
 	if (stack == NULL)
 		printf("empty...\n");
 	else
@@ -49,7 +50,7 @@ void	ft_stack_debug(const t_stack *stack)
 	}
 	printf("----------------\n");
 }
-*/
+
 int	*ft_stack_to_array(t_stack **stack)
 {
 	int		*contents;

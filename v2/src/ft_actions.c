@@ -3,40 +3,52 @@
 /*                                                        :::      ::::::::   */
 /*   ft_actions.c                                       :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:00:57 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 17:14:25 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/08 00:40:27 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include "ft_primitives.h"
 #include "libft.h"
+#include <stdio.h>
 
 static void	ft_print_action(int action)
 {
 	if (action == PRIMITIVE_PA)
-		ft_putendl_fd("pa", 1);
+		//ft_putendl_fd("pa", 1);
+		printf("pa\n");
 	if (action == PRIMITIVE_PB)
-		ft_putendl_fd("pb", 1);
+		//ft_putendl_fd("pb", 1);
+		printf("pb\n");
 	if (action == PRIMITIVE_RA)
-		ft_putendl_fd("ra", 1);
+		//ft_putendl_fd("ra", 1);
+		printf("ra\n");
 	if (action == PRIMITIVE_RB)
-		ft_putendl_fd("rb", 1);
+		//ft_putendl_fd("rb", 1);
+		printf("rb\n");
 	if (action == PRIMITIVE_RR)
-		ft_putendl_fd("rr", 1);
+		//ft_putendl_fd("rr", 1);
+		printf("rr\n");
 	if (action == PRIMITIVE_RRA)
-		ft_putendl_fd("rra", 1);
+		//ft_putendl_fd("rra", 1);
+		printf("rra\n");
 	if (action == PRIMITIVE_RRB)
-		ft_putendl_fd("rrb", 1);
+		//ft_putendl_fd("rrb", 1);
+		printf("rrb\n");
 	if (action == PRIMITIVE_RRR)
-		ft_putendl_fd("rrr", 1);
+		//ft_putendl_fd("rrr", 1);
+		printf("rrr\n");
 	if (action == PRIMITIVE_SA)
-		ft_putendl_fd("sa", 1);
+		//ft_putendl_fd("sa", 1);
+		printf("sa\n");
 	if (action == PRIMITIVE_SB)
-		ft_putendl_fd("sb", 1);
+		//ft_putendl_fd("sb", 1);
+		printf("sb\n");
 	if (action == PRIMITIVE_SS)
-		ft_putendl_fd("ss", 1);
+		//ft_putendl_fd("ss", 1);
+		printf("ss\n");
 }
 
 void	ft_execute_action(t_stack **stack_a, t_stack **stack_b, int action)

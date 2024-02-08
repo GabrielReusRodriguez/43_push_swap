@@ -3,10 +3,10 @@
 #                                                         :::      ::::::::    #
 #    Makefile                                           :+:      :+:    :+:    #
 #                                                     +:+ +:+         +:+      #
-#    By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+         #
+#    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/01/04 01:34:53 by greus-ro          #+#    #+#              #
-#    Updated: 2024/02/07 16:41:49 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/02/07 23:19:04 by greus-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
@@ -34,7 +34,7 @@ ${NAME}: ${BIN_DIR} ${FT_BIN_DIR} ${GET_NEXT_BIN_DIR} ${PRINTF_BIN_DIR} ${BIN_DI
 #ar -rcsT ${NAME} ${BIN_DIR}/ft/ft_utils.a  ${BIN_DIR}/ft_get_next_line/ft_get_next_line.a ${BIN_DIR}/ft_printf/ft_printf.a	
 #	ar -rcs ${NAME} ${BIN_DIR}/ft/ft_utils.a  ${BIN_DIR}/ft_get_next_line/ft_get_next_line.a ${BIN_DIR}/ft_printf/ft_printf.a	
 	ar -rcs ${NAME} ${BIN_DIR}/ft/*.o  ${BIN_DIR}/ft_get_next_line/*.o ${BIN_DIR}/ft_printf/*.o	
-	cp ${NAME} ${BIN_DIR}/libft.a
+#	cp ${NAME} ${BIN_DIR}/libft.a
 	
 ${BIN_DIR}/ft/ft_utils.a:
 	make all -C ${FT_DIR}
@@ -73,7 +73,7 @@ re: fclean all
 #	ar -rcs ${NAME} ${LIBFT_OBJ_FILES} ${BONUS_OBJ_FILES}
 #	@touch bonus
 
--include ${LIBFT_DEP_FILES}
--include ${BONUS_DEP_FILES}
+#-include ${LIBFT_DEP_FILES}
+#-include ${BONUS_DEP_FILES}
 
 .PHONY= all clean fclean re

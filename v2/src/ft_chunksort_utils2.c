@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_chunksort_utils2.c                              :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 20:19:59 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/07 21:24:44 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/08 01:31:25 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -38,21 +38,23 @@ void	ft_stacka_node_to_top(t_stack **stack_a, int node_position)
     
     size = ft_stack_size(*stack_a);
 	i = 0;
-	if ((size_t)node_position < size / 2)
+	if ((size_t)node_position <= size / 2)
     {
-        num_steps = node_position;
-		action = PRIMITIVE_RRA;
+        num_steps = node_position ;
+		action = PRIMITIVE_RA;
     }
 	else
 	{
-		num_steps = size - node_position + 1;
-		action = PRIMITIVE_RA;
+		//num_steps = size - node_position + 1;
+		num_steps = size - node_position;
+		action = PRIMITIVE_RRA;
 	}
 	while ((size_t)i < num_steps)
 	{
 		ft_execute_action(stack_a, NULL, action);
 		i++;
 	}
+	
 }
 
 void	ft_stackb_node_to_top(t_stack **stack_b, int node_position)
@@ -64,15 +66,15 @@ void	ft_stackb_node_to_top(t_stack **stack_b, int node_position)
     
     size = ft_stack_size(*stack_b);
 	i = 0;
-	if ((size_t)node_position < size / 2)
+	if ((size_t)node_position <= size / 2)
     {
         num_steps = node_position;
-		action = PRIMITIVE_RRB;
+		action = PRIMITIVE_RB;
     }
 	else
 	{
-		num_steps = size - node_position + 1;
-		action = PRIMITIVE_RB;
+		num_steps = size - node_position;
+		action = PRIMITIVE_RRB;
 	}
 	while ((size_t)i < num_steps)
 	{
