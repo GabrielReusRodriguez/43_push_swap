@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:03:08 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/08 01:45:10 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/08 13:44:38 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -24,7 +24,8 @@ static size_t ft_chunk_get_size(const t_stack *stack_a)
 
     stack_size = ft_stack_size(stack_a);
     if (stack_size <=  100)
-        return (20);
+        return (10);
+        //return (20);
     if (stack_size  >= 500)
         return (50);
     return (30);
@@ -73,9 +74,9 @@ void    ft_chunk_sort(t_stack **stack_a, t_stack **stack_b)
     //i = 0;
     //while (i < num_chunks -1)
     while (chunk.min < stack_size)
-    {
-        
+    {   
         ft_chunk_iteration(stack_a, stack_b, chunk);
+       //ft_stack_debug(*stack_b);
         chunk = ft_chunk_get_next(chunk, chunk_size, stack_size);    
         //printf("nex_chunk min %lu max %lu\n",chunk.min, chunk.max);
       //  i++;
@@ -88,9 +89,11 @@ void    ft_chunk_sort(t_stack **stack_a, t_stack **stack_b)
     */
     /*
     printf("DEBUG %lu size %lu min\n", stack_size, chunk.min);
-    ft_stack_debug(*stack_a);
+    //ft_stack_debug(*stack_a);
     ft_stack_debug(*stack_b);
-    printf("Post-bucle\n");*/
+    
+    printf("Post-bucle\n");
+    */
     while (ft_stack_isempty(stack_b) == FALSE)
     {
         ft_stackb_max_to_top(stack_b);

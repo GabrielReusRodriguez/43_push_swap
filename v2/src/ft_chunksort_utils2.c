@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 20:19:59 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/08 01:31:25 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/08 10:49:27 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_stacka_min_to_top(t_stack **stack_a)
 {
 	int		min_position;
 
-	min_position = ft_get_max_position(*stack_a);
+	min_position = ft_get_min_position(*stack_a);
     ft_stacka_node_to_top(stack_a, min_position);
 }
 
