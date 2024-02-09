@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/07 23:43:54 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:35:11 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,7 +30,7 @@ void	ft_stack_clear(t_stack **stack)
 	stack = NULL;
 }
 
-
+/*
 void	ft_stack_debug(const t_stack *stack)
 {
 	t_stack		*node;
@@ -50,7 +50,7 @@ void	ft_stack_debug(const t_stack *stack)
 	}
 	printf("----------------\n");
 }
-
+*/
 int	*ft_stack_to_array(t_stack **stack)
 {
 	int		*contents;

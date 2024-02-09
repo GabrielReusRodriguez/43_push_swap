@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_sort_size5.c                                    :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/04 16:49:50 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 17:21:07 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:48:51 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -25,21 +25,21 @@ static void	ft_push_less_values_to_b(t_stack **stack_a, t_stack **stack_b)
 }
 
 /*
-* Primero busco los dos indices 0 y 1 ( los valores mas pequeños ) y los 
-coloco al final de la pila b . Me aseguro que sea el 1 el top para que
-al volver con push queden ordenados
+* First I look for the two indices 0 and 1 (the smallest values) and the
+I place b at the end of the stack. I make sure that 1 is the top so that
+When you return with push they are ordered
 
-* Luego me encargo del ultimo. Si el Ultimo de lo que me qued aen la pila A
-	es el último paso al siguiente paso si no...-.
-	En caso que el primero sea el ultimo indice , lo traslado hacia arriba para
-	que quede el ultimo
-	En caso que no , solo nos queda que sea el sgeundo por lo que lo muevo 
-	hacia abajo.
+* Then I'll take care of the last one. If the last one I have left is in stack A
+It is the last step to the next step if not...-.
+In case the first is the last index, I move it up to
+let the last one remain
+If not, we only have it to be the second one so I move it
+down.
 
-* Ya solo nos quedan ordenar los 2 valores intermedios de A ( que NO son el
-ultimo xq ya lo hemos colocado antes...)
+* We only have to sort the 2 intermediate values ​​of A (which are NOT the
+last because we have already placed it before...)
 
-* Por ultimo hacemos los opush de b-> a
+* Finally we do the opush of b-> a
 */
 void	ft_sort_size5(t_stack **stack_a, t_stack **stack_b)
 {
@@ -67,31 +67,3 @@ void	ft_sort_size5(t_stack **stack_a, t_stack **stack_b)
 	ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
 	ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
 }
-
-/*
-
-void	sort_four_to_five_elements(t_stacks *s)
-{
-	while (s->b_size <= 1)
-	{
-		if (s->a[0] == 0 || s->a[0] == 1)
-			push("pb", s);
-		else
-			rotate(s->a, s->a_size, "up", "a");
-	}
-	if (s->b[0] == 0)
-		swap("sb", s->b, s->b_size);
-	if (s->a[2] != 4)
-	{
-		if (s->a[0] == 4)
-			rotate(s->a, s->a_size, "up", "a");
-		else
-			rotate(s->a, s->a_size, "down", "a");
-	}
-	if (s->a[0] > s->a[1])
-		swap("sa", s->a, s->a_size);
-	push("pa", s);
-	push("pa", s);
-}
-
-*/

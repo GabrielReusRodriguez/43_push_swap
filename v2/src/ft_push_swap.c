@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_push_swap.c                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:28:20 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 18:11:34 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:36:19 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -84,40 +84,3 @@ int	main(int argc, char **argv)
 	ft_stack_clear(&stack_b);
 	return (0);
 }
-
-/*
-int	main(int argc, char **argv)
-{
-	t_stack		*stack_a;
-	t_stack		*stack_b;
-
-	if (argc < 4)
-	{
-		printf("Numero erroneo de args\n");
-		return (1);
-	}
-	stack_a = fill_stack(argc, argv);
-	stack_b = fill_stack(0, NULL);
-	if (ft_isvalid_stack(&stack_a) == FALSE)
-	{
-		printf("Numeros repetidos\n");
-		return (1);
-	}
-	ft_stack_debug(stack_a);
-	ft_stack_debug(stack_b);
-	printf("***************************************\n\n");
-	if (ft_create_index_stack(stack_a) == NULL)
-	{
-		printf("ERROR\n");
-		return (1);
-	}
-	ft_stack_debug(stack_a);
-	ft_sort(&stack_a, &stack_b);
-	printf("FINAL ******************************************\n");
-	ft_stack_debug(stack_a);
-	ft_stack_debug(stack_b);
-	ft_stack_clear(&stack_a);
-	ft_stack_clear(&stack_b);
-	return (0);
-}
-*/

@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/24 20:53:29 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/02 01:57:42 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:36:36 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -99,27 +99,3 @@ t_format	*ft_load_format(const char *str)
 	format->len = i;
 	return (format);
 }
-
-/*
-#include <stdio.h>
-static void	ft_printf_fotmat(t_format format)
-{
-	printf("Formato detectado:\n");
-	return ;
-}
-
-int main(void)
-{
-	char *f="Gabriel Reus %-10d \n";
-	t_format *format;
-	size_t	i;
-	i = 0;
-	while( f[i] != '\0' && f[i] != '%')
-		i++;
-	format = ft_printf_get_format(f + i);
-	printf("\tlen : %lu\n", format->len);
-	printf("\twidth : %d\n", format->n_width);
-	printf("\tzero padding : %d\n", format->b_zero_padding);
-	return (0);
-}
-*/

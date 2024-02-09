@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_validations.c                                   :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:34:58 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/07 19:29:23 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 12:53:40 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@
 t_bool	ft_isvalid_arg(const char *str)
 {
 	size_t				i;
-	char	unsigned	has_digit;
+	char unsigned		has_digit;
 
 	has_digit = FALSE;
 	i = 0;

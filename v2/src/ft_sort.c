@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 23:03:24 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 14:41:34 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:49:17 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,7 +17,7 @@ void	ft_sort(t_stack **stack_a, t_stack **stack_b)
 	size_t	stack_size;
 
 	*stack_b = NULL;
-	if (ft_stack_isempty(stack_a) == TRUE)
+	if (ft_stack_isempty(stack_a) == TRUE || ft_stack_issorted(*stack_a))
 		return ;
 	else
 	{

@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:59:50 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 09:17:21 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:43:37 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -17,23 +17,16 @@
 
 typedef struct s_chunk
 {
-	size_t  min;
-	size_t  max;
+	size_t	min;
+	size_t	max;
 }	t_chunk;
 
 void	ft_chunk_sort(t_stack **stack_a, t_stack **stack_b);
 void	ft_chunk_iteration(t_stack **stack_a, t_stack **stack_b, \
 			t_chunk chunk);
-void	ft_stackb_min_to_top(t_stack **stack_b);
-void	ft_stackb_max_to_top(t_stack **stack_b);
-void	ft_stacka_min_to_top(t_stack **stack_a);
-void	ft_stacka_max_to_top(t_stack **stack_a);
-void	ft_stacka_node_to_top(t_stack **stack_a, int node_position);
-void	ft_stackb_node_to_top(t_stack **stack_b, int node_position);
 int		ft_get_value_position(t_stack *stack, int value);
-int		ft_stackb_node_to_top2(t_stack **stack_a, t_stack **stack_b, int node_position, int value);
-int		ft_get_min_position(t_stack *stack);
-int		ft_get_max_position(t_stack *stack);
-
+void	ft_stacka_node_to_top(t_stack **stack_a, int node_position);
+int		ft_stackb_node_to_top(t_stack **stack_a, t_stack **stack_b, \
+			int node_position, int value);
 
 #endif

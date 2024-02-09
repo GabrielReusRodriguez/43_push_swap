@@ -6,26 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:43:37 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/05 23:39:58 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 13:43:51 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #ifndef FT_PRIMITIVES_H
 # define FT_PRIMITIVES_H
-
-/*
-# define PRIMITIVE_SA "sa"
-# define PRIMITIVE_SB "sb"
-# define PRIMITIVE_SS "ss"
-# define PRIMITIVE_PA "pa"
-# define PRIMITIVE_PB "pb"
-# define PRIMITIVE_RA "ra"
-# define PRIMITIVE_RB "rb"
-# define PRIMITIVE_RR "rr"
-# define PRIMITIVE_RRA "rra"
-# define PRIMITIVE_RRB "rrb"
-# define PRIMITIVE_RRR "rrr"
-*/
 
 # define PRIMITIVE_NO 0
 # define PRIMITIVE_SA 1
