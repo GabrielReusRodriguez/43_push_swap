@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 19:49:24 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 20:01:05 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:13:52 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -15,6 +15,6 @@
 
 # include "ft_stack_bonus.h"
 
-int	ft_checker_loop(t_stack **stack_a, t_stack **stack_b);
+t_bool	ft_checker_loop(t_stack **stack_a, t_stack **stack_b);
 
 #endif

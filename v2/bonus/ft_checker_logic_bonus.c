@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 19:49:13 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 20:04:40 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:18:54 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -16,12 +16,39 @@
 #include "ft_utils_bonus.h"
 #include "libft.h"
 #include "ft_primitives_bonus.h"
+#include "ft_get_next_line.h"
+
+
+static t_bool	ft_checker_isValid_action(char *line, size_t size)
+{
+	if (ft_strncmp(line,"pa\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"pb\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"sa\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"sb\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"ss\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"ra\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"rb\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"rr\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"rra\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"rrb\n",size) == 0)
+		return (TRUE);
+	if (ft_strncmp(line,"rrr\n",size) == 0)
+		return (TRUE);
+	return (FALSE);
+}
 
 static void ft_checker_execute_step(t_stack **stack_a, t_stack **stack_b, \
-				char *line)
+				char *line, size_t size)
 {
-	size_t	size;
-	size = ft_strlen(line);
 	if (ft_strncmp(line,"pa\n",size) == 0)
 		ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
 	if (ft_strncmp(line,"pb\n",size) == 0)
@@ -46,21 +73,31 @@ static void ft_checker_execute_step(t_stack **stack_a, t_stack **stack_b, \
 		ft_execute_action(stack_a, stack_b, PRIMITIVE_RRR);		
 }
 
-int	ft_checker_loop(t_stack **stack_a, t_stack **stack_b)
+t_bool	ft_checker_loop(t_stack **stack_a, t_stack **stack_b)
 {
 	char	*line;
+	size_t	size;
 
 	stack_a = stack_a;
 	stack_b = stack_b;
-	if (ft_stack_issorted(stack_a) == TRUE)
-		return (TRUE);
+	if (ft_stack_issorted(*stack_a) == TRUE)
+		return (FALSE);
 	line = ft_get_next_line_many_fds(STDIN_FILENO);
 	if (line == NULL)
-		return (TRUE);
+		return (FALSE);
 	else
 	{
-		ft_checker_execute_step(stack_a, stack_b, line);
+		size = ft_strlen(line);
+		if (ft_checker_isValid_action(line, size) == FALSE)
+		{
+			ft_putendl_fd("Error", STDERR_FILENO);
+			ft_stack_clear(stack_a);
+			ft_stack_clear(stack_b);
+			free(line);
+			exit(EXIT_FAILURE);
+		}
+		ft_checker_execute_step(stack_a, stack_b, line, size);
 		free(line);
-		return (FALSE);
+		return (TRUE);
 	}
 }

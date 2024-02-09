@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:45:31 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 20:00:49 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 20:18:51 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -14,7 +14,6 @@
 #include <stdlib.h>
 #include <limits.h>
 #include "libft.h"
-#include "ft_get_next_line.h"
 #include "ft_stack_bonus.h"
 #include "ft_validations_bonus.h"
 #include "ft_primitives_bonus.h"
@@ -69,7 +68,7 @@ int	main(int argc, char **argv)
 {
 	t_stack			*stack_a;
 	t_stack			*stack_b;
-	t_bool			end_loop;
+	t_bool			loop;
 
 	if (argc == 1)
 		return (1);
@@ -81,9 +80,9 @@ int	main(int argc, char **argv)
 	stack_b = fill_stack(0, NULL);
 	if (ft_isvalid_stack(&stack_a) == FALSE)
 		return (ft_inform_error());
-	end_loop = FALSE;
-	while (end_loop == FALSE)
-		end_loop = ft_checker_loop(&stack_a, &stack_b);		
+	loop = TRUE;
+	while (loop == TRUE)
+		loop = ft_checker_loop(&stack_a, &stack_b);		
 	if (ft_stack_issorted(stack_a))
 		ft_putendl_fd("OK", STDOUT_FILENO);
 	else
