@@ -1,17 +1,18 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_stack2.c                                        :+:      :+:    :+:   */
+/*   ft_stack2_bonus.c                                  :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:01:26 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 19:06:41 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:18:31 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
+#include <stdio.h>
 #include <stdlib.h>
-#include "ft_stack.h"
+#include "ft_stack_bonus.h"
 #include "libft.h"
 
 void	ft_stack_clear(t_stack **stack)
@@ -29,7 +30,7 @@ void	ft_stack_clear(t_stack **stack)
 	stack = NULL;
 }
 
-/*
+
 void	ft_stack_debug(const t_stack *stack)
 {
 	t_stack		*node;
@@ -49,7 +50,7 @@ void	ft_stack_debug(const t_stack *stack)
 	}
 	printf("----------------\n");
 }
-*/
+
 int	*ft_stack_to_array(t_stack **stack)
 {
 	int		*contents;

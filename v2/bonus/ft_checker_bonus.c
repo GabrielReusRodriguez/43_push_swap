@@ -1,25 +1,26 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_push_swap.c                                     :+:      :+:    :+:   */
+/*   ft_checker_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
-/*   Created: 2024/01/15 19:28:20 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 19:41:59 by greus-ro         ###   ########.fr       */
+/*   Created: 2024/02/09 18:45:31 by greus-ro          #+#    #+#             */
+/*   Updated: 2024/02/09 20:00:49 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
 #include <unistd.h>
-#include <stddef.h>
 #include <stdlib.h>
 #include <limits.h>
 #include "libft.h"
-#include "ft_stack.h"
-#include "ft_validations.h"
-#include "ft_primitives.h"
-#include "ft_sort.h"
-#include "ft_index.h"
+#include "ft_get_next_line.h"
+#include "ft_stack_bonus.h"
+#include "ft_validations_bonus.h"
+#include "ft_primitives_bonus.h"
+#include "ft_stack_bonus.h"
+#include "ft_utils_bonus.h"
+#include "ft_checker_logic_bonus.h"
 
 static int	ft_inform_error(void)
 {
@@ -63,10 +64,12 @@ static t_stack	*fill_stack(int argc, char **argv)
 	return (stack);
 }
 
+
 int	main(int argc, char **argv)
 {
-	t_stack		*stack_a;
-	t_stack		*stack_b;
+	t_stack			*stack_a;
+	t_stack			*stack_b;
+	t_bool			end_loop;
 
 	if (argc == 1)
 		return (1);
@@ -78,9 +81,15 @@ int	main(int argc, char **argv)
 	stack_b = fill_stack(0, NULL);
 	if (ft_isvalid_stack(&stack_a) == FALSE)
 		return (ft_inform_error());
-	if (ft_create_index_stack(stack_a) == NULL)
-		return (ft_inform_error());
-	ft_sort(&stack_a, &stack_b);
+	end_loop = FALSE;
+	while (end_loop == FALSE)
+		end_loop = ft_checker_loop(&stack_a, &stack_b);		
+	if (ft_stack_issorted(stack_a))
+		ft_putendl_fd("OK", STDOUT_FILENO);
+	else
+		ft_putendl_fd("KO", STDOUT_FILENO);
+	//ft_stack_debug(stack_a);
+	//ft_stack_debug(stack_b);
 	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);
 	return (0);

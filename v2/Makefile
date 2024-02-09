@@ -6,13 +6,14 @@
 #    By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+         #
 #                                                 +#+#+#+#+#+   +#+            #
 #    Created: 2024/02/03 18:11:33 by greus-ro          #+#    #+#              #
-#    Updated: 2024/02/09 12:34:00 by greus-ro         ###   ########.fr        #
+#    Updated: 2024/02/09 19:51:20 by greus-ro         ###   ########.fr        #
 #                                                                              #
 # **************************************************************************** #
 
 #Variables..................................................
 
 NAME=push_swap
+BONUS=checker
 
 CFLAGS=-Wall -Wextra -Werror -MMD -MP -g
 #CFLAGS+= -g
@@ -22,6 +23,7 @@ LIBFT_INC_DIR=${LIBFT_DIR}/inc
 LIBFT_LIB=${LIBFT_DIR}/libft.a
 
 SRC_DIR=./src
+BONUS_SRC_DIR=./bonus
 BIN_DIR=.
 OBJ_DIR=./obj
 
@@ -54,10 +56,24 @@ SRC_FILES =	ft_actions.c \
 			ft_stack2.c \
 			ft_validations.c 
 
+BONUS_FILES =	ft_checker_bonus.c	\
+				ft_checker_logic_bonus.c	\
+				ft_actions_bonus.c \
+				ft_primitives_px_bonus.c \
+				ft_primitives_rrx_bonus.c \
+				ft_primitives_rx_bonus.c \
+				ft_primitives_sx_bonus.c \
+				ft_stack_bonus.c \
+				ft_stack2_bonus.c \
+				ft_validations_bonus.c 
+
 #Rules.......................................................
 
 OBJ_FILES = $(SRC_FILES:%.c=${OBJ_DIR}/%.o)
 DEP_FILES = $(SRC_FILES:%.c=${OBJ_DIR}/%.d)
+
+BONUS_OBJ_FILES = $(BONUS_FILES:%.c=${OBJ_DIR}/%.o)
+BONUS_DEP_FILES = $(BONUS_FILES:%.c=${OBJ_DIR}/%.d)
 
 #Rules.......................................................
 
@@ -81,11 +97,23 @@ clean:
 	rm -f ${OBJ_DIR}/*.d
 
 fclean: clean
-	rm -f ${NAME}
+	rm -f ${NAME} ${BONUS}
 
 re: fclean all
 
--include ${DEP_FILES}
-#bonus:
 
-.PHONY: all clean fclean re
+#bonus:
+bonus: ${BONUS}
+
+${BONUS} : ${OBJ_DIR} ${LIBFT_LIB} ${BONUS_OBJ_FILES}
+#	cc ${CFLAGS} -o $@ ${LIBFT_LIB} ${OBJ_FILES} 
+	cc ${CFLAGS} -o $@  ${BONUS_OBJ_FILES} ${LIBFT_LIB}
+
+${OBJ_DIR}/%.o : ${BONUS_SRC_DIR}/%.c Makefile
+	cc ${CFLAGS} -I ${LIBFT_INC_DIR} -o $@ -c $<  
+
+#includes:
+-include ${DEP_FILES}
+-include ${BONUS_DEP_FILES}
+
+.PHONY: all clean fclean re bonus

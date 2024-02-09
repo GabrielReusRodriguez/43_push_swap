@@ -1,44 +1,17 @@
 /* ************************************************************************** */
 /*                                                                            */
 /*                                                        :::      ::::::::   */
-/*   ft_actions.c                                       :+:      :+:    :+:   */
+/*   ft_actions_bonus.c                                 :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/16 11:00:57 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 19:41:28 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 19:40:46 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#include <unistd.h>
-#include "ft_primitives.h"
+#include "ft_primitives_bonus.h"
 #include "libft.h"
-
-static void	ft_print_action(int action)
-{
-	if (action == PRIMITIVE_PA)
-		ft_putendl_fd("pa", STDOUT_FILENO);
-	if (action == PRIMITIVE_PB)
-		ft_putendl_fd("pb", STDOUT_FILENO);
-	if (action == PRIMITIVE_RA)
-		ft_putendl_fd("ra", STDOUT_FILENO);
-	if (action == PRIMITIVE_RB)
-		ft_putendl_fd("rb", STDOUT_FILENO);
-	if (action == PRIMITIVE_RR)
-		ft_putendl_fd("rr", STDOUT_FILENO);
-	if (action == PRIMITIVE_RRA)
-		ft_putendl_fd("rra", STDOUT_FILENO);
-	if (action == PRIMITIVE_RRB)
-		ft_putendl_fd("rrb", STDOUT_FILENO);
-	if (action == PRIMITIVE_RRR)
-		ft_putendl_fd("rrr", STDOUT_FILENO);
-	if (action == PRIMITIVE_SA)
-		ft_putendl_fd("sa", STDOUT_FILENO);
-	if (action == PRIMITIVE_SB)
-		ft_putendl_fd("sb", STDOUT_FILENO);
-	if (action == PRIMITIVE_SS)
-		ft_putendl_fd("ss", STDOUT_FILENO);
-}
 
 void	ft_execute_action(t_stack **stack_a, t_stack **stack_b, int action)
 {
@@ -66,7 +39,6 @@ void	ft_execute_action(t_stack **stack_a, t_stack **stack_b, int action)
 		ft_primitives_sx(stack_b);
 	if (action == PRIMITIVE_SS)
 		ft_primitives_ss(stack_a, stack_b);
-	ft_print_action(action);
 }
 
 void	ft_execute_step(int stacka_action, int stackb_action, \
