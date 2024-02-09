@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_chunksort.h                                     :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 19:59:50 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 09:17:21 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/07 21:13:00 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,10 +30,7 @@ void	ft_stacka_min_to_top(t_stack **stack_a);
 void	ft_stacka_max_to_top(t_stack **stack_a);
 void	ft_stacka_node_to_top(t_stack **stack_a, int node_position);
 void	ft_stackb_node_to_top(t_stack **stack_b, int node_position);
-int		ft_get_value_position(t_stack *stack, int value);
-int		ft_stackb_node_to_top2(t_stack **stack_a, t_stack **stack_b, int node_position, int value);
 int		ft_get_min_position(t_stack *stack);
 int		ft_get_max_position(t_stack *stack);
-
 
 #endif

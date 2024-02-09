@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/07 20:19:59 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 12:22:11 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 07:41:33 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -58,7 +58,6 @@ void	ft_stacka_node_to_top(t_stack **stack_a, int node_position)
 	
 }
 
-/*
 void	ft_stackb_node_to_top(t_stack **stack_b, int node_position)
 {
     size_t  size;
@@ -80,48 +79,11 @@ void	ft_stackb_node_to_top(t_stack **stack_b, int node_position)
 	}
 	while ((size_t)i < num_steps)
 	{
+		/*
+		if((*stack_b) != NULL && (*stack_b)->next != NULL && (*stack_b)->content < (*stack_b)->next->content)
+			ft_execute_action(NULL, stack_b, PRIMITIVE_SB);
+			*/
 		ft_execute_action(NULL, stack_b, action);
 		i++;
 	}
-}
-*/
-
-int	ft_stackb_node_to_top2(t_stack **stack_a, t_stack **stack_b, int node_position, int value)
-{
-    size_t			size;
-    int				i;
-    int				action;
-    size_t			num_steps;
-	unsigned char	optimized_flag;
-    
-	stack_a = stack_a;
-	value = value;
-
-    size = ft_stack_size(*stack_b);
-	i = 0;
-	optimized_flag = 0;
-	if ((size_t)node_position <= size / 2)
-    {
-        num_steps = node_position;
-		action = PRIMITIVE_RB;
-    }
-	else
-	{
-		num_steps = size - node_position;
-		action = PRIMITIVE_RRB;
-	}
-	while ((size_t)i < num_steps)
-	{		
-		if (value > 0 && (*stack_b)->content == value -1)
-		{
-			ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
-			optimized_flag = 1;
-			if(action == PRIMITIVE_RRB)
-				i--;
-		}
-		else
-			ft_execute_action(NULL, stack_b, action);
-		i++;
-	}
-	return (optimized_flag);
 }

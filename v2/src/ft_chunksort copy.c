@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:03:08 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 12:16:21 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 01:07:32 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -57,27 +57,28 @@ void    ft_chunk_sort(t_stack **stack_a, t_stack **stack_b)
     size_t  chunk_size;
     t_chunk chunk;
     size_t  stack_size;
-    unsigned char   flag_optimized;
-    int         node_position;
     
     stack_size = ft_stack_size(*stack_a);
     chunk_size = ft_chunk_get_size(*stack_a);
     chunk = ft_chunk_init(chunk_size);
+    //while (chunk.min < stack_size)
     while (ft_stack_isempty(stack_a) == FALSE)
     {   
         ft_chunk_iteration(stack_a, stack_b, chunk);
         chunk = ft_chunk_get_next(chunk, chunk_size, stack_size);    
     }
-    while(ft_stack_isempty(stack_b) == FALSE)
+    /*
+    printf("\tFINAL");
+    ft_stack_debug(*stack_b);
+    */
+    while (ft_stack_isempty(stack_b) == FALSE)
     {
-        node_position = ft_get_value_position(*stack_b, stack_size - 1);
-        flag_optimized = ft_stackb_node_to_top2(stack_a, stack_b, node_position, stack_size - 1);
+        ft_stackb_max_to_top(stack_b);
         ft_execute_action(stack_a, stack_b, PRIMITIVE_PA);
-        if (flag_optimized)
-        {
-            ft_execute_action(stack_a, stack_b, PRIMITIVE_SA);
-            stack_size --;
-        }
-        stack_size --;
+        /*
+        printf("\tMoved\n");
+        ft_stack_debug(*stack_b);
+        */
     }
+    
 }
