@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:03:08 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 13:34:21 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:57:12 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -30,12 +30,14 @@ static size_t	ft_chunk_get_size(const t_stack *stack_a)
 	return (30);
 }
 
-static t_chunk	ft_chunk_init(size_t chunk_size)
+static t_chunk	ft_chunk_init(size_t chunk_size, size_t stack_size)
 {
 	t_chunk	chunk;
 
 	chunk.min = 0;
 	chunk.max = chunk_size;
+	if (chunk.max > stack_size)
+		chunk.max = stack_size;
 	return (chunk);
 }
 
@@ -73,7 +75,7 @@ void	ft_chunk_sort(t_stack **stack_a, t_stack **stack_b)
 
 	stack_size = ft_stack_size(*stack_a);
 	chunk_size = ft_chunk_get_size(*stack_a);
-	chunk = ft_chunk_init(chunk_size);
+	chunk = ft_chunk_init(chunk_size, stack_size);
 	while (ft_stack_isempty(stack_a) == FALSE)
 	{
 		ft_chunk_iteration(stack_a, stack_b, chunk);

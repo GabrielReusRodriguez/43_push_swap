@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/06 20:03:08 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 13:38:28 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/09 14:54:38 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -111,6 +111,7 @@ void	ft_chunk_iteration(t_stack **stack_a, t_stack **stack_b, \
 	int		hold_2;
 
 	numbers_found = 0;
+	stacka_size = ft_stack_size(*stack_a);
 	while (numbers_found < chunk.max - chunk.min)
 	{
 		stacka_size = ft_stack_size(*stack_a);
