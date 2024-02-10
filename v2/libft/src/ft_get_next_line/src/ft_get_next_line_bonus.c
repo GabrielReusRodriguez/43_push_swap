@@ -3,10 +3,10 @@
 /*                                                        :::      ::::::::   */
 /*   ft_get_next_line_bonus.c                           :+:      :+:    :+:   */
 /*                                                    +:+ +:+         +:+     */
-/*   By: greus-ro <greus-ro@student.42.fr>          +#+  +:+       +#+        */
+/*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/20 16:34:45 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/06 17:12:37 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/10 01:37:22 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -77,7 +77,7 @@ static char	*get_line_from_buffer(char	**buffer, int num_bytes_read)
 	if (num_bytes_read == 0)
 	{
 		line = ft_substr(*buffer, 0, len);
-		*buffer = ft_ptr_free(buffer);
+		*buffer = ft_ptr_free(*buffer);
 	}
 	return (line);
 }
@@ -122,7 +122,7 @@ char	*ft_get_next_line_many_fds(int fd)
 	if (line == NULL)
 		ft_ptr_free(&fd_buffer);
 	if (line != NULL && ft_strlen(line) == 0)
-		ft_ptr_free(&line);
+		line = ft_ptr_free(line);
 	buffers[fd] = fd_buffer;
 	return (line);
 }

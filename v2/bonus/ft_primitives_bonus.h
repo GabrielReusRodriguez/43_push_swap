@@ -6,12 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 20:43:37 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 19:06:00 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/10 02:12:27 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_PRIMITIVES_H
-# define FT_PRIMITIVES_H
+#ifndef FT_PRIMITIVES_BONUS_H
+# define FT_PRIMITIVES_BONUS_H
 
 # define PRIMITIVE_NO 0
 # define PRIMITIVE_SA 1

@@ -6,12 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 19:34:05 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 19:05:16 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/10 01:59:43 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_VALIDATIONS_H
-# define FT_VALIDATIONS_H
+#ifndef FT_VALIDATIONS_BONUS_H
+# define FT_VALIDATIONS_BONUS_H
 
 # include "ft_stack_bonus.h"
 

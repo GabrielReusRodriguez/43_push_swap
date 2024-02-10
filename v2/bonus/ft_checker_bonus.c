@@ -6,7 +6,7 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/02/09 18:45:31 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 20:18:51 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/10 02:00:38 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
@@ -63,7 +63,6 @@ static t_stack	*fill_stack(int argc, char **argv)
 	return (stack);
 }
 
-
 int	main(int argc, char **argv)
 {
 	t_stack			*stack_a;
@@ -82,13 +81,11 @@ int	main(int argc, char **argv)
 		return (ft_inform_error());
 	loop = TRUE;
 	while (loop == TRUE)
-		loop = ft_checker_loop(&stack_a, &stack_b);		
-	if (ft_stack_issorted(stack_a))
+		loop = ft_checker_loop(&stack_a, &stack_b);
+	if (ft_stack_issorted(stack_a) && ft_stack_isempty(&stack_b))
 		ft_putendl_fd("OK", STDOUT_FILENO);
 	else
 		ft_putendl_fd("KO", STDOUT_FILENO);
-	//ft_stack_debug(stack_a);
-	//ft_stack_debug(stack_b);
 	ft_stack_clear(&stack_a);
 	ft_stack_clear(&stack_b);
 	return (0);

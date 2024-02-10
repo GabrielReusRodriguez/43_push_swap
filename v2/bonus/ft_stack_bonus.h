@@ -6,12 +6,12 @@
 /*   By: greus-ro <greus-ro@student.42barcel>       +#+  +:+       +#+        */
 /*                                                +#+#+#+#+#+   +#+           */
 /*   Created: 2024/01/15 18:47:50 by greus-ro          #+#    #+#             */
-/*   Updated: 2024/02/09 19:05:34 by greus-ro         ###   ########.fr       */
+/*   Updated: 2024/02/10 02:13:17 by greus-ro         ###   ########.fr       */
 /*                                                                            */
 /* ************************************************************************** */
 
-#ifndef FT_STACK_H
-# define FT_STACK_H
+#ifndef FT_STACK_BONUS_H
+# define FT_STACK_BONUS_H
 
 # include <stddef.h>
 # include "ft_utils_bonus.h"
